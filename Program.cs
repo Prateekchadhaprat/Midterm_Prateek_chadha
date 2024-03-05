@@ -68,7 +68,7 @@ namespace Midterm_Prateek_chadha
         public void PrintDetails()
         {
             // TODO: Print the details of the item (name, id, price, and stock quantity).
-            Console.WriteLine($"Name of the item is {ItemName}\n ID of the item is {Price} \n stock avaiable for {ItemName} is {QuantityInStock}");
+            Console.WriteLine($"Name of the item is {ItemName}\nID of the item is {ItemId} \nPrice of the item is {Price}\nstock avaiable for {ItemName} is {QuantityInStock}");
 
         }
     }
@@ -83,10 +83,24 @@ namespace Midterm_Prateek_chadha
             // TODO: Implement logic to interact with these objects.
             // Example tasks:
             // 1. Print details of all items.
+            item1.PrintDetails();
+            item2.PrintDetails();
             // 2. Sell some items and then print the updated details.
+            item1.SellItem(5);
+            item2.SellItem(12);
             // 3. Restock an item and print the updated details.
+            item1.RestockItem(10);
+            item2.RestockItem(15);
             // 4. Check if an item is in stock and print a message accordingly.
-
+            if (item1.IsInStock() )
+            {
+                Console.WriteLine($"{item1.ItemName} is in stock with quantity {item1.QuantityInStock}");
+               
+            }
+            if (item2.IsInStock() )
+            {
+                Console.WriteLine($"{item2.ItemName} is in stock with quantity {item2.QuantityInStock}");
+            }
 
         }
     }
